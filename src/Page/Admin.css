@@ -1,0 +1,245 @@
+.admin-page {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 56px) clamp(16px, 4vw, 44px) 36px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.admin-header h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(32px, 5vw, 44px);
+}
+
+.admin-header p,
+.admin-demo-note {
+  color: var(--muted);
+}
+
+.admin-header p {
+  margin: 0;
+}
+
+.admin-logout {
+  flex-shrink: 0;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 24px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.admin-tab {
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-tab:hover,
+.admin-tab.active {
+  color: #fff;
+  border-color: rgba(96, 208, 248, 0.32);
+  background: rgba(96, 208, 248, 0.1);
+}
+
+.admin-tab:focus-visible,
+.admin-logout:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.admin-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.admin-section-heading h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.admin-section-heading > span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-stat,
+.admin-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(19, 53, 153, 0.12));
+}
+
+.admin-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.admin-stat span,
+.admin-stat small {
+  color: var(--muted);
+}
+
+.admin-stat strong {
+  color: var(--cyan);
+  font-size: 30px;
+}
+
+.admin-stat small {
+  font-size: 12px;
+}
+
+.admin-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.admin-card h3 {
+  margin: 0 0 14px;
+}
+
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.attendance-table {
+  table-layout: fixed;
+}
+
+.attendance-table th,
+.attendance-table td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.admin-table th {
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-table td {
+  font-size: 14px;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--cyan);
+  background: rgba(96, 208, 248, 0.1);
+  font-size: 12px;
+}
+
+.admin-status.pending,
+.admin-status.new {
+  color: #ffd166;
+  background: rgba(255, 209, 102, 0.1);
+}
+
+.admin-status.absent,
+.admin-status.on-leave {
+  color: #ff9a9a;
+  background: rgba(255, 120, 120, 0.1);
+}
+
+.admin-demo-note {
+  margin: 22px 0 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.login-demo-notice {
+  margin-top: 18px !important;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-page {
+    padding-top: 24px;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+  }
+
+  .admin-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .admin-header {
+    flex-direction: column;
+  }
+
+  .admin-stats {
+    gap: 9px;
+  }
+
+  .admin-stat {
+    padding: 15px;
+  }
+
+  .admin-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
